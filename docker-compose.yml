@@ -19,3 +19,28 @@ services:
     command: ["npm","run","test"]  
     
 
+# version: '3.7'
+
+# services:
+#   app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.dev
+#     links:
+#       - selenium
+#     network_mode: bridge
+#     environment:
+#       - WEB_DRIVER_HOSTNAME=selenium
+#     volumes:
+#      - ./:/app
+#      - /app/node_modules
+#     ports:
+#       - 4200:4200
+#       - 9876:9876
+#       - 49152:49152
+#   selenium:
+#     image: selenium/standalone-chrome-debug:3.141.59-copernicium
+#     ports:
+#       - 4444:4444
+#     volumes:
+#       - /dev/shm:/dev/shm
