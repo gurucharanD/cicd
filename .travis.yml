@@ -6,4 +6,4 @@ before_install:
   - docker build -t appwithcicd -f Dockerfile.dev .
 
 script:
-  - docker run appwithcicd npm run test --code-coverage
+  - docker run appwithcicd npm run test
