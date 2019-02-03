@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run appwithcicd npm run test
+
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "cicdapplication"
+  env: "Cicdapplication-env"
+  bucket_name: "elasticbeanstalk-us-east-2-206855206676"
+  bucket_path: "cicdapplication"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
